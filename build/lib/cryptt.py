@@ -2,7 +2,7 @@ import os
 from io import BufferedReader
 
 import click
-from CrypttService import CrypttService
+import CrypttService
 
 
 @click.group()
@@ -15,7 +15,7 @@ def cli():
 @click.argument('input_file', type=click.File('rb'))
 @click.argument('output', type=click.File('xb'))
 @click.argument('key_file', type=click.File('rb'))
-@click.option('--block-cipher-mode',
+@click.option('--block_cipher_mode',
               type=click.Choice(list(CrypttService.get_block_cipher_modes_config().keys()), case_sensitive=False),
               prompt=True)
 @click.option('--algorithm',
@@ -41,7 +41,7 @@ def encrypt(input_file: BufferedReader, output: BufferedReader, key_file: Buffer
 @click.argument('input_file', type=click.File('rb'))
 @click.argument('output', type=click.File('xb'))
 @click.argument('key_file', type=click.File('rb'))
-@click.option('--block-cipher-mode',
+@click.option('--block_cipher_mode',
               type=click.Choice(list(CrypttService.get_block_cipher_modes_config().keys()), case_sensitive=False),
               prompt=True)
 @click.option('--algorithm',

@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='cryptt',
     version='0.1.0',
-    py_modules=['cryptt'],
+    py_modules=['cryptt', 'CrypttService'],
     install_requires=[
         'Click',
     ],
