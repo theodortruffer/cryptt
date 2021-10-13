@@ -20,7 +20,7 @@ def cli():
               prompt=True)
 @click.option('--algorithm',
               type=click.Choice(list(CrypttService.get_algorithms_config().keys()), case_sensitive=False),
-              default='AES')
+              prompt=True)
 def encrypt(input_file: BufferedReader, output: BufferedReader, key_file: BufferedReader, block_cipher_mode: str,
             algorithm: str):
     """INPUT_FILE: path of file to be encrypted (must exist, or use "-" for stdin)\n
@@ -46,7 +46,7 @@ def encrypt(input_file: BufferedReader, output: BufferedReader, key_file: Buffer
               prompt=True)
 @click.option('--algorithm',
               type=click.Choice(list(CrypttService.get_algorithms_config().keys()), case_sensitive=False),
-              default='AES')
+              prompt=True)
 def decrypt(input_file: BufferedReader, output: BufferedReader, key_file: BufferedReader, block_cipher_mode: str,
             algorithm: str):
     """INPUT_FILE: path of file to be decrypted (must exist, or use "-" for stdin)\n
